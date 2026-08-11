@@ -11,3 +11,4 @@ class Note(Base):
     title: Mapped[str] = mapped_column(String)
     body: Mapped[str] = mapped_column(String)
     createdAt: Mapped[datetime] = mapped_column(DateTime)
+    updatedAt: Mapped[datetime] = mapped_column(DateTime)
