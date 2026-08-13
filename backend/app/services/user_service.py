@@ -4,6 +4,7 @@ from sqlalchemy.orm import Session
 from app.database.database import engine
 from app.models.user import User
 from app.security.password_hasher import hash_password
+from sqlalchemy.exc import IntegrityError
 
 def register_user(user_data: UserRequest):
     hashed_password = hash_password(user_data.password)
@@ -16,7 +17,13 @@ def register_user(user_data: UserRequest):
 
     with Session(engine) as session:
         session.add(user)
-        session.commit()
+        try:
+            session.commit()
+        except IntegrityError as e:
+            session.rollback()
+            raise
+
+            
         session.refresh(user)
 
     return user

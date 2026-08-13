@@ -1,6 +1,8 @@
 from fastapi import APIRouter
 from app.schemas.userdto import UserRequest, UserResponse
 from app.services.user_service import register_user
+from fastapi import APIRouter, HTTPException
+from sqlalchemy.exc import IntegrityError
 
 router = APIRouter()
 
@@ -8,4 +10,10 @@ router = APIRouter()
 
 @router.post("/register", response_model=UserResponse)
 def register(user_data:UserRequest):
-    return register_user(user_data)
+    try:
+        return register_user(user_data)
+    except IntegrityError:
+        raise HTTPException(
+            status_code=409,
+            detail="Username or email already exists"
+        )
