@@ -1,13 +1,18 @@
-import { Link } from "react-router-dom";
+import Navbar from "../components/Navbar";
+import Hero from "../components/Hero";
+import Footer from "../components/Footer";
+import "./LandingPage.css"
 
 const LandingPage = () => {
     return (
-        <div>
-            <h1>Welcome to our landing page</h1>
-            <Link to="/register">
-                CLICK HERE TO REGISTER!
-            </Link>
-        </div>
+        <>
+            <Navbar />
+            <Hero />
+            <Footer />
+
+
+
+        </>
     )
 }
 
