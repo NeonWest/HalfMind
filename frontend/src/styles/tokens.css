@@ -1,0 +1,610 @@
+:root {
+    /* ============================================================
+       COLORS
+       ============================================================ */
+
+    /* Main application background.
+       Use for:
+       - body/page background
+       - full-page sections
+       - primary dark canvas
+    */
+    --color-bg: #0b0a0a;
+
+    /* Secondary surface color.
+       Use for:
+       - cards
+       - panels
+       - elevated sections
+       - navbar/footer surfaces when they need separation
+    */
+    --color-surface: #16171d;
+
+    /* Higher/elevated surface.
+       Use for:
+       - dropdowns
+       - modals
+       - menus
+       - elements sitting above --color-surface
+    */
+    --color-surface-raised: #1f2028;
+
+
+    /* Main readable text.
+       Use for:
+       - primary body text
+       - important labels
+       - primary navigation text
+    */
+    --color-text: #ece9e1;
+
+    /* Secondary text.
+       Use for:
+       - descriptions
+       - supporting information
+       - secondary navigation
+       - less prominent content
+    */
+    --color-text-muted: #c9c6bd;
+
+    /* Low-emphasis text.
+       Use for:
+       - metadata
+       - timestamps
+       - technical/system information
+       - disabled or intentionally faded information
+    */
+    --color-text-subtle: #929189;
+
+
+    /* Primary white.
+       Use for:
+       - important headings
+       - primary buttons
+       - active navigation items
+       - high-emphasis UI
+    */
+    --color-primary: #ffffff;
+
+    /* Color used on top of --color-primary.
+       Use for:
+       - text inside primary buttons
+       - icons inside primary buttons
+    */
+    --color-primary-contrast: #0b0a0a;
+
+
+    /* Standard border color.
+       Use for:
+       - navbar divider
+       - cards
+       - inputs
+       - buttons
+       - section boundaries
+    */
+    --color-border: #474740;
+
+    /* Subtle border.
+       Use when a border should be less visually prominent than
+       the standard border.
+    */
+    --color-border-subtle: #2e303a;
+
+
+    /* Accent color.
+       Reserved for:
+       - future interactive emphasis
+       - links
+       - selected states
+       - notifications/highlights
+       
+       Do not use this everywhere. HalfMind's visual identity
+       primarily relies on neutral colors.
+    */
+    --color-accent: #c084fc;
+
+    /* Low-opacity version of the accent.
+       Use for:
+       - accent backgrounds
+       - selected states
+       - subtle highlights
+    */
+    --color-accent-muted: rgba(192, 132, 252, 0.15);
+
+
+    /* Text selection colors.
+       Controls the appearance when the user highlights text.
+    */
+    --color-selection-bg: #4a5d6a;
+    --color-selection-text: #ffffff;
+
+
+
+    /* ============================================================
+       TYPOGRAPHY
+       ============================================================ */
+
+    /* General application font.
+       Use for:
+       - body text
+       - descriptions
+       - form labels
+       - normal UI text
+    */
+    --font-sans:
+        system-ui,
+        "Segoe UI",
+        Roboto,
+        sans-serif;
+
+    /* Technical/monospace font.
+       Use for:
+       - metadata
+       - timestamps
+       - technical labels
+       - code
+       - navigation labels with the technical aesthetic
+    */
+    --font-mono:
+        ui-monospace,
+        Consolas,
+        monospace;
+
+    /* Display/serif font.
+       Use for:
+       - hero headings
+       - major page titles
+       - large editorial-style headings
+    */
+    --font-display:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+
+
+    /* ============================================================
+       FONT SIZES
+       ============================================================ */
+
+    /* Very small UI text.
+       Typical use:
+       - tiny metadata
+       - compact labels
+       - secondary technical information
+    */
+    --text-xs: 11px;
+
+    /* Small text.
+       Typical use:
+       - metadata
+       - timestamps
+       - form helper text
+    */
+    --text-sm: 12px;
+
+    /* Small readable technical text.
+       Typical use:
+       - navigation
+       - technical labels
+       - code-like UI
+    */
+    --text-md: 13px;
+
+    /* Normal application text.
+       Typical use:
+       - paragraphs
+       - descriptions
+       - form text
+       - normal UI
+    */
+    --text-base: 15px;
+
+    /* Large UI text.
+       Typical use:
+       - section headings
+       - important UI labels
+    */
+    --text-lg: 20px;
+
+    /* Page/subsection heading.
+       Typical use:
+       - h2
+       - major component headings
+    */
+    --text-xl: 24px;
+
+    /* Large heading.
+       Typical use:
+       - page titles
+       - authentication headings
+       - larger section headings
+    */
+    --text-2xl: 36px;
+
+    /* Hero/display heading.
+       Typical use:
+       - large landing-page headlines
+    */
+    --text-3xl: 48px;
+
+    /* Maximum display size.
+       Typical use:
+       - very large desktop hero typography
+       - major marketing/editorial headlines
+    */
+    --text-4xl: 64px;
+
+
+
+    /* ============================================================
+       LINE HEIGHT
+       ============================================================ */
+
+    /* Tight text.
+       Use for:
+       - large headings
+       - display typography
+    */
+    --leading-tight: 1.2;
+
+    /* Normal UI line height.
+       Use for:
+       - navigation
+       - labels
+       - compact content
+    */
+    --leading-normal: 1.5;
+
+    /* Comfortable reading line height.
+       Use for:
+       - paragraphs
+       - descriptions
+       - longer text
+    */
+    --leading-relaxed: 1.6;
+
+
+
+    /* ============================================================
+       LETTER SPACING
+       ============================================================ */
+
+    /* Slightly tighter typography.
+       Use for:
+       - large display headings
+       - hero titles
+    */
+    --tracking-tight: -0.02em;
+
+    /* Default letter spacing.
+       Use for:
+       - normal body text
+       - regular UI
+    */
+    --tracking-normal: 0;
+
+    /* Slightly spaced-out text.
+       Use for:
+       - buttons
+       - navigation
+       - technical labels
+       - uppercase text
+    */
+    --tracking-wide: 0.08em;
+
+    /* Strong spacing.
+       Use for:
+       - uppercase metadata
+       - system labels
+       - small technical headings
+    */
+    --tracking-widest: 0.2em;
+
+
+
+    /* ============================================================
+       SPACING
+       ============================================================ */
+
+    /* 4px
+       Smallest spacing unit.
+       Use for:
+       - icon/text gaps
+       - tiny internal spacing
+    */
+    --space-1: 4px;
+
+    /* 8px
+       Small spacing.
+       Use for:
+       - compact gaps
+       - small component padding
+    */
+    --space-2: 8px;
+
+    /* 12px
+       Small-to-medium spacing.
+       Use for:
+       - button padding
+       - input padding
+       - small vertical gaps
+    */
+    --space-3: 12px;
+
+    /* 16px
+       Standard spacing.
+       Use for:
+       - component gaps
+       - card padding
+       - navigation spacing
+    */
+    --space-4: 16px;
+
+    /* 20px
+       Intermediate spacing.
+       Use when 16px is slightly too small but 24px
+       is too large.
+    */
+    --space-5: 20px;
+
+    /* 24px
+       Standard large spacing.
+       Use for:
+       - section internals
+       - component groups
+       - navbar gaps
+    */
+    --space-6: 24px;
+
+    /* 32px
+       Main layout spacing.
+       Use for:
+       - page horizontal padding
+       - larger component padding
+       - gaps between major UI groups
+    */
+    --space-8: 32px;
+
+    /* 40px
+       Large component spacing.
+       Use for:
+       - spacing between major elements
+       - larger form sections
+    */
+    --space-10: 40px;
+
+    /* 48px
+       Major spacing.
+       Use for:
+       - hero element spacing
+       - large section gaps
+       - page headings
+    */
+    --space-12: 48px;
+
+    /* 64px
+       Large layout spacing.
+       Use for:
+       - major section separation
+       - large page padding
+    */
+    --space-16: 64px;
+
+    /* 80px
+       Extra-large section spacing.
+       Use for:
+       - landing-page section separation
+       - major vertical whitespace
+    */
+    --space-20: 80px;
+
+    /* 96px
+       Very large section padding.
+       Use for:
+       - hero top/bottom spacing
+       - major landing-page sections
+    */
+    --space-24: 96px;
+
+    /* 128px
+       Maximum standard section spacing.
+       Use sparingly for:
+       - major page transitions
+       - large landing-page sections
+    */
+    --space-32: 128px;
+
+
+
+    /* ============================================================
+       LAYOUT
+       ============================================================ */
+
+    /* Maximum width for major page content.
+       Use for:
+       - landing page
+       - dashboard
+       - application-wide content containers
+    */
+    --content-width: 1200px;
+
+    /* Width for wide visual components.
+       Use for:
+       - large previews
+       - editors
+       - wide panels
+    */
+    --content-width-wide: 1000px;
+
+    /* Width for readable text content.
+       Use for:
+       - paragraphs
+       - descriptions
+       - documentation text
+    */
+    --content-width-text: 768px;
+
+    /* Default horizontal page padding.
+       Use for:
+       - page containers
+       - responsive layouts
+    */
+    --page-padding: 32px;
+
+
+
+    /* ============================================================
+       BORDERS & RADII
+       ============================================================ */
+
+    /* Standard border thickness. */
+    --border-width: 1px;
+
+    /* Very subtle rounding.
+       Use for:
+       - technical UI
+       - tags
+       - small controls
+    */
+    --radius-sm: 2px;
+
+    /* Standard component rounding.
+       Use for:
+       - inputs
+       - buttons
+       - cards
+    */
+    --radius-md: 4px;
+
+    /* Larger rounding.
+       Use only where the design calls for a softer component.
+    */
+    --radius-lg: 8px;
+
+
+
+    /* ============================================================
+       SHADOWS
+       ============================================================ */
+
+    /* Small elevation.
+       Use for:
+       - small dropdowns
+       - subtle floating UI
+    */
+    --shadow-sm:
+        rgba(0, 0, 0, 0.15) 0 2px 4px;
+
+    /* Medium elevation.
+       Use for:
+       - cards
+       - menus
+       - floating panels
+    */
+    --shadow-md:
+        rgba(0, 0, 0, 0.25) 0 8px 16px;
+
+    /* Strong elevation.
+       Use for:
+       - modals
+       - major overlays
+       - high-priority floating UI
+    */
+    --shadow-lg:
+        rgba(0, 0, 0, 0.4) 0 10px 15px -3px,
+        rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
+
+
+
+    /* ============================================================
+       TRANSITIONS
+       ============================================================ */
+
+    /* Fast interaction.
+       Use for:
+       - hover states
+       - icon changes
+       - small visual feedback
+    */
+    --transition-fast: 0.15s ease;
+
+    /* Default interaction speed.
+       Use for:
+       - buttons
+       - links
+       - borders
+       - background changes
+    */
+    --transition-normal: 0.2s ease;
+
+    /* Slower visual transitions.
+       Use for:
+       - larger UI movement
+       - panels
+       - overlays
+    */
+    --transition-slow: 0.3s ease;
+
+
+
+    /* ============================================================
+       Z-INDEX
+       ============================================================ */
+
+    /* Normal page content. */
+    --z-base: 1;
+
+    /* Dropdowns and popovers. */
+    --z-dropdown: 10;
+
+    /* Sticky elements. */
+    --z-sticky: 20;
+
+    /* Background overlays. */
+    --z-overlay: 40;
+
+    /* Main navbar. */
+    --z-navbar: 50;
+
+    /* Modals/dialogs. */
+    --z-modal: 100;
+
+
+
+    /* ============================================================
+       SHARED COMPONENT DIMENSIONS
+       ============================================================ */
+
+    /* Standard navbar height.
+       Used by:
+       - Navbar
+       - pages that need to account for navbar space
+    */
+    --navbar-height: 64px;
+
+    /* Standard button height.
+       Used by:
+       - primary buttons
+       - secondary buttons
+       - form actions
+    */
+    --button-height: 44px;
+
+    /* Standard input height.
+       Used by:
+       - text inputs
+       - password inputs
+       - select controls
+    */
+    --input-height: 44px;
+
+    /* Responsive horizontal gutter.
+       Used by full-width components such as:
+       - navbar
+       - footer
+       - full-width landing-page sections
+    */
+    --page-gutter: clamp(24px, 5vw, 64px);
+
+}
