@@ -1,0 +1,241 @@
+.login-page {
+    position: relative;
+    min-height: 100svh;
+    width: 100%;
+
+    box-sizing: border-box;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 32px var(--page-gutter);
+
+    background: var(--color-bg);
+    color: var(--color-text);
+}
+
+.login-background {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+
+    background:
+        radial-gradient(circle at 70% 35%,
+            rgba(255, 255, 255, 0.045),
+            transparent 32%),
+        radial-gradient(circle at 20% 80%,
+            rgba(255, 255, 255, 0.025),
+            transparent 35%);
+}
+
+/* Header */
+
+.login-header {
+    position: relative;
+    z-index: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding-bottom: 24px;
+
+    border-bottom: 1px solid var(--color-border);
+}
+
+.login-brand {
+    color: var(--color-primary);
+
+    font-family: var(--font-display);
+    font-size: 24px;
+    font-style: italic;
+    font-weight: 400;
+
+    letter-spacing: 0.5px;
+    text-decoration: none;
+}
+
+.login-index {
+    color: var(--color-text-subtle);
+
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    letter-spacing: var(--tracking-wide);
+}
+
+/* Content */
+
+.login-content {
+    position: relative;
+    z-index: 1;
+
+    flex: 1;
+
+    width: min(100%, 1080px);
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 1fr 420px;
+    gap: 120px;
+
+    align-items: center;
+}
+
+/* Intro */
+
+.login-intro {
+    max-width: 560px;
+}
+
+.login-label {
+    display: block;
+
+    margin-bottom: 24px;
+
+    color: var(--color-text-subtle);
+
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    letter-spacing: var(--tracking-widest);
+    text-transform: uppercase;
+}
+
+.login-intro h1 {
+    margin: 0 0 28px;
+
+    color: var(--color-primary);
+
+    font-family: var(--font-display);
+    font-size: clamp(48px, 5vw, 72px);
+    font-weight: 400;
+    line-height: 1.05;
+    letter-spacing: var(--tracking-tight);
+}
+
+.login-intro p {
+    max-width: 430px;
+    margin: 0;
+
+    color: var(--color-text-muted);
+
+    font-family: var(--font-sans);
+    font-size: var(--text-base);
+    line-height: var(--leading-relaxed);
+}
+
+/* Form */
+
+.login-form-wrapper {
+    width: 100%;
+}
+
+.login-register {
+    margin: 24px 0 0;
+
+    color: var(--color-text-subtle);
+
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+
+    text-align: center;
+}
+
+.login-register a {
+    margin-left: 8px;
+
+    color: var(--color-text);
+
+    text-decoration: none;
+
+    border-bottom: 1px solid var(--color-border);
+
+    transition:
+        color var(--transition-normal),
+        border-color var(--transition-normal);
+}
+
+.login-register a:hover {
+    color: var(--color-primary);
+    border-color: var(--color-primary);
+}
+
+/* Footer */
+
+.login-footer {
+    position: relative;
+    z-index: 1;
+
+    display: flex;
+    justify-content: space-between;
+
+    padding-top: 24px;
+
+    border-top: 1px solid var(--color-border);
+
+    color: var(--color-text-subtle);
+
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    letter-spacing: var(--tracking-wide);
+}
+
+/* Tablet */
+
+@media (max-width: 900px) {
+    .login-content {
+        grid-template-columns: 1fr;
+        gap: 48px;
+
+        width: min(100%, 560px);
+
+        padding: 72px 0;
+    }
+
+    .login-intro {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .login-intro p {
+        margin: 0 auto;
+    }
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+    .login-page {
+        padding: 24px;
+    }
+
+    .login-header {
+        padding-bottom: 20px;
+    }
+
+    .login-brand {
+        font-size: 21px;
+    }
+
+    .login-index {
+        font-size: 10px;
+    }
+
+    .login-content {
+        gap: 40px;
+        padding: 56px 0;
+    }
+
+    .login-intro h1 {
+        font-size: 46px;
+    }
+
+    .login-intro p {
+        font-size: 14px;
+    }
+
+    .login-footer {
+        flex-direction: column;
+        gap: 8px;
+    }
+}
