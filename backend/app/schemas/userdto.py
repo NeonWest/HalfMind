@@ -15,3 +15,13 @@ class UserResponse(BaseModel):
     username:str
     email:str
     createdAt: datetime
+
+class LoginRequest(BaseModel):
+    email:str
+    password:str
+
+class LoginResponse(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+
+    access_token:str
+    token_type:str = "bearer"
