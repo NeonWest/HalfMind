@@ -1,3 +1,6 @@
+from app.services.user_service import login_user
+from app.schemas.userdto import LoginRequest
+from app.schemas.userdto import LoginResponse
 from fastapi import APIRouter
 from app.schemas.userdto import UserRequest, UserResponse
 from app.services.user_service import register_user
@@ -17,3 +20,8 @@ def register(user_data:UserRequest):
             status_code=409,
             detail="Username or email already exists"
         )
+
+@router.post("/login", response_model=LoginResponse)
+def login(user_data: LoginRequest):
+    return login_user(user_data)
+

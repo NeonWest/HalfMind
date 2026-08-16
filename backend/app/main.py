@@ -1,3 +1,5 @@
+from dotenv import load_dotenv
+load_dotenv()
 from fastapi import FastAPI
 from app.database.database import engine
 from sqlalchemy import text
@@ -10,7 +12,8 @@ app = FastAPI()
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-        os.getenv("FRONTEND_URL")
+        os.getenv("FRONTEND_URL"),
+        "http://localhost:5173",
     ],
     allow_credentials=True,
     allow_methods=["GET","POST"],
