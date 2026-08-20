@@ -91,3 +91,4 @@ Thumbs.db
 
 # Local PostgreSQL data (if ever created locally)
 postgres-data/
+.vscode/
