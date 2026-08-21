@@ -1,10 +1,6 @@
-from app.services.user_service import login_user
-from app.schemas.userdto import LoginRequest
-from app.schemas.userdto import LoginResponse
-from fastapi import APIRouter
-from app.schemas.userdto import UserRequest, UserResponse
-from app.services.user_service import register_user
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter, HTTPException, Response
+from app.schemas.userdto import UserRequest, UserResponse, LoginResponse, LoginRequest
+from app.services.user_service import register_user, login_user
 from sqlalchemy.exc import IntegrityError
 
 router = APIRouter()
@@ -22,6 +18,14 @@ def register(user_data:UserRequest):
         )
 
 @router.post("/login", response_model=LoginResponse)
-def login(user_data: LoginRequest):
-    return login_user(user_data)
+def login(user_data: LoginRequest, response: Response):
+    data= login_user(user_data)
+    response.set_cookie(
+        key="access_token",
+        value=data["access_token"],
+        httponly="True",
+        secure="True",
+        samesite="lax"
+    )
+    return {"message": "Login Successful!"}
 
