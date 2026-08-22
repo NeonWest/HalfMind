@@ -12,6 +12,7 @@ const LoginForm = () => {
             `${import.meta.env.VITE_API_URL}/login`,
             {
                 method: "POST",
+                credentials: "include",
                 headers: {
                     "Content-Type": "application/json",
                 },
@@ -22,7 +23,9 @@ const LoginForm = () => {
             }
         )
 
-        console.log(response.status)
+        const data = await response.json()
+
+        console.log(data.message)
     }
 
     return (
