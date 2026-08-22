@@ -23,8 +23,8 @@ def login(user_data: LoginRequest, response: Response):
     response.set_cookie(
         key="access_token",
         value=data["access_token"],
-        httponly="True",
-        secure="True",
+        httponly=True,
+        secure=True,
         samesite="lax"
     )
     return {"message": "Login Successful!"}

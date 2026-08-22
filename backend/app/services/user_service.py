@@ -47,3 +47,11 @@ def login_user(user_data: LoginRequest):
             "access_token": token,
             "token_type": "bearer"
         }
+
+def get_user_by_id(user_id: int):
+
+    with Session(engine) as session:
+
+        return session.query(User).filter(
+            User.userid == user_id
+        ).first()
