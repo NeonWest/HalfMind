@@ -1,11 +1,17 @@
 import { useState, type FormEvent } from "react"
+import { useAuth } from "../context/AuthContext"
+import { useNavigate } from "react-router-dom"
 import "./LoginForm.css"
 
 const LoginForm = () => {
+    const { setUser } = useAuth()
+    const navigate = useNavigate()
+
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
 
     const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+
         e.preventDefault()
 
         const response = await fetch(
@@ -26,6 +32,29 @@ const LoginForm = () => {
         const data = await response.json()
 
         console.log(data.message)
+
+        if (!response.ok) {
+            return
+        }
+
+        // Login succeeded and the backend created the cookie.
+        // Now ask the backend for the logged-in user's information.
+        const meResponse = await fetch(
+            `${import.meta.env.VITE_API_URL}/me`,
+            {
+                credentials: "include",
+            }
+        )
+
+        if (!meResponse.ok) {
+            return
+        }
+
+        const user = await meResponse.json()
+
+        // Update the shared authentication state.
+        setUser(user)
+        navigate("/app")
     }
 
     return (
