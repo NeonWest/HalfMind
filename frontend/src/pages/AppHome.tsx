@@ -1,7 +1,13 @@
 import "./AppHome.css"
-
+import Logout from "../components/Logout"
 const AppHome = () => {
-    return <p>hi</p>
+    return (
+        <>
+            <h1>Welcome!</h1>
+
+            <Logout />
+        </>
+    )
 }
 
 
