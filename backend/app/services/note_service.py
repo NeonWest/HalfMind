@@ -27,3 +27,16 @@ def create_note(note_data: NoteRequest, user):
         session.refresh(note)
 
     return note
+
+def get_user_notes(user):
+    with Session(engine) as session:
+        return session.query(Note).filter(
+            Note.userid == user.userid
+        ).all
+
+def get_single_note(user, id):
+    with Session(engine) as session:
+        return session.query(Note).filter(
+            Note.userid == user.userid,
+            Note.id == id
+        ).first()
