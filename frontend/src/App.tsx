@@ -6,6 +6,7 @@ import LandingPage from './pages/LandingPage'
 import Register from './pages/Register'
 import Login from './pages/Login'
 import AppHome from './pages/AppHome'
+import LoadingScreen from './pages/LoadingScreen'
 
 import ProtectedRoute from './components/ProtectedRoute'
 import PublicRoute from './components/PublicRoute'
@@ -18,7 +19,7 @@ function App() {
   const { user, loading } = useAuth()
 
   if (loading) {
-    return <div>wait a bit guys</div>
+    return <LoadingScreen />
   }
 
   return (
