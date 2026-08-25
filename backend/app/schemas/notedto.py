@@ -2,7 +2,6 @@ from datetime import datetime
 from pydantic import ConfigDict
 from pydantic import BaseModel
 class NoteRequest(BaseModel):
-    userid: int
     title: str
     body: str
 
